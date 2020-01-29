@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+font-family: 'Averia Serif Libre', cursive;
+ line-height: 1.4;
+}
+
+.container {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #041cb3;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  overflow-y: auto;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+#buttonadd {
+	background-color: #041cb3;
+	color:aliceblue;
+	margin-left: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 8px;
+	font-family: 'Averia Serif Libre', cursive;
+	font-size: 1.2em;
+}
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.todo-item {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item span {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.75em;
+}
+
+.done span {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.tick {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #000000;
+  border-radius: 3px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tick::before {
+  content: '✓';
+  font-size: 2em;
+  display: none;
+}
+
+.done .tick::before {
+  display: inline;
+}
+
+.delete-todo {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ff0000;
+  background-color: #ff0000;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+	color:#ffffff;
+  }
+
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 3px solid #000000;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 1.1em;
+}
+
+.empty-state {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.checklist-icon {
+  margin-bottom: 20px;
+}
+
+.empty-state__title, .empty-state__description {
+  margin-bottom: 20px;
+}
+
+.todo-list:empty {
+  display: none;
+}
+
+.todo-list:empty + .empty-state {
+  display: flex;
+}
